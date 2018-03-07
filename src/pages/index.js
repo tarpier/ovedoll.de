@@ -4,8 +4,10 @@ import Hero from "../components/Hero";
 
 const IndexPage = () => (
   <div>
-    <Hero typeStrings={["Webseiten", "Mobile Apps", "heißen Scheiß"]} />
-    <Link to="/page-2/">Go to page 2</Link>
+    <Hero
+      typeStrings={["Webseiten", "Mobile Apps", "Webapps", "heißen Scheiß"]}
+    />
+    {/* <Link to="/page-2/">Go to page 2</Link> */}
   </div>
 );
 

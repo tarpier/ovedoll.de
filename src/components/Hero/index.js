@@ -4,6 +4,7 @@ import Typed from "react-typed";
 import PropTypes from "prop-types";
 
 import background from "./heroBackground.jpg";
+import Button from "../Button";
 
 const HeroWrapper = styled.div`
   display: flex;
@@ -28,7 +29,7 @@ const ImageContainer = styled.div`
 `;
 
 const ClaimContainer = styled.p`
-  font-size: 3.7rem;
+  font-size: 3.3rem;
   color: white;
   font-family: rubik;
   font-weight: 400;
@@ -57,6 +58,7 @@ const Hero = props => (
           />
         </AnimatedClaim>
       </ClaimContainer>
+      <Button href="#" title={"Lass uns zusammen arbeiten"} />
     </ImageContainer>
   </HeroWrapper>
 );
