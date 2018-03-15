@@ -1,24 +1,25 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Default Starter"
+    title: 'Freelance Webdeveloper Ove Doll',
+    desc: 'Go hire me',
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-styled-components",
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: [`rubik\:400,700`]
-      }
+        fonts: ['rubik:400,700'],
+      },
     },
     {
-      resolve: "gatsby-plugin-svgr",
+      resolve: 'gatsby-plugin-svgr',
       options: {
-        dir: "/src/svg",
+        dir: '/src/svg',
         icon: true,
-        viewBox: false
+        viewBox: false,
         // see https://github.com/smooth-code/svgr for a list of all options
-      }
-    }
-  ]
+      },
+    },
+  ],
 };

@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Link = styled.a`
   text-decoration: none;
@@ -8,7 +8,7 @@ const Link = styled.a`
   border: 3px solid #48e5c2;
   padding: 1em;
   border-radius: 36px;
-
+  
   &:hover{
     color: #5E5E5E;
     background-color #48e5c2;
@@ -18,13 +18,26 @@ const Link = styled.a`
   }
 `;
 
-const Button = props => {
-  return <Link href={props.href}>{props.title}</Link>;
+const Button = (props) => {
+  const {
+    className, href, title, onCLick,
+  } = props;
+  return (
+    <Link className={className} href={href} onCLick={onCLick}>
+      {title}
+    </Link>
+  );
 };
 
 Button.propTypes = {
   href: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  onCLick: PropTypes.func.isRequired,
+};
+
+Button.defaultProps = {
+  className: '',
 };
 
 export default Button;

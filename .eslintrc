@@ -1,0 +1,9 @@
+{
+  "extends": "airbnb",
+  "settings": {
+    "import/core-modules": ["react", "config", "prop-types"]
+  },
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+  }
+}

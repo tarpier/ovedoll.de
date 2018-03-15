@@ -1,16 +1,12 @@
-import React from "react";
-import styled from "styled-components";
-import Typed from "react-typed";
-import PropTypes from "prop-types";
+import React from 'react';
+import styled from 'styled-components';
+import Typed from 'react-typed';
+import PropTypes from 'prop-types';
 
-import background from "./heroBackground.jpg";
-import Button from "../Button";
+import background from './heroBackground.jpg';
+import Button from '../Button';
 
-const HeroWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+const HeroWrapper = styled.div``;
 
 const ImageContainer = styled.div`
   background: url(${background}) no-repeat center center fixed;
@@ -20,10 +16,11 @@ const ImageContainer = styled.div`
   background-size: cover;
   height: 100vh;
   position: relative;
-  text-align: center;
+  /* text-align: center; */
   width: 100%;
   min-height: 350px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
@@ -41,6 +38,10 @@ const AnimatedClaim = styled.span`
   display: block;
 `;
 
+const StyledButton = styled(Button)`
+  margin-top: 10rem;
+`;
+
 const Hero = props => (
   <HeroWrapper>
     <ImageContainer>
@@ -51,20 +52,26 @@ const Hero = props => (
             strings={props.typeStrings}
             typeSpeed={60}
             startDelay={30}
-            loop={true}
+            loop
             loopCount={Infinity}
             backDelay={450}
             backSpeed={60}
           />
         </AnimatedClaim>
       </ClaimContainer>
-      <Button href="#" title={"Lass uns zusammen arbeiten"} />
+      <StyledButton
+        href="#"
+        title="Lass uns zusammen arbeiten"
+        onClick={() => {
+          console.log('clicked');
+        }}
+      />
     </ImageContainer>
   </HeroWrapper>
 );
 
 Hero.propTypes = {
-  typeStrings: PropTypes.array
+  typeStrings: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Hero;
