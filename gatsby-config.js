@@ -7,6 +7,15 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'img',
+        path: `${__dirname}/src/images`,
+      },
+    },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: ['rubik:400,700'],
@@ -18,7 +27,14 @@ module.exports = {
         dir: '/src/svg',
         icon: true,
         viewBox: false,
-        // see https://github.com/smooth-code/svgr for a list of all options
+      },
+    },
+    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'src',
+        path: `${__dirname}/src/`,
       },
     },
   ],

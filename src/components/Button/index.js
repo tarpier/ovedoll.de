@@ -1,6 +1,6 @@
+// @flow
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 const Link = styled.a`
   text-decoration: none;
@@ -18,26 +18,19 @@ const Link = styled.a`
   }
 `;
 
-const Button = (props) => {
-  const {
-    className, href, title, onCLick,
-  } = props;
+type Props = {
+  href: string,
+  title: string,
+  className: string,
+  onCLick: () => null,
+};
+
+export default function Button({
+  className, href, title, onCLick,
+}: Props) {
   return (
     <Link className={className} href={href} onCLick={onCLick}>
       {title}
     </Link>
   );
-};
-
-Button.propTypes = {
-  href: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  onCLick: PropTypes.func.isRequired,
-};
-
-Button.defaultProps = {
-  className: '',
-};
-
-export default Button;
+}
