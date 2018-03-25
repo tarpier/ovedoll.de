@@ -1,17 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { breakpoints } from '../utils';
 
 const InnerContainer = styled.div`
   /* Small only */
-  @media screen and (max-width: 39.9375em) {
+  @media screen and (${breakpoints.small}) {
     width: 100%;
     padding: 0 10px;
     // background-color: red;
   }
 
   /* Medium and up */
-  @media screen and (min-width: 40em) {
+  @media screen and (${breakpoints.medium}) {
     width: 40em;
     padding: 0 10px;
     // background-color: blue;
@@ -22,7 +23,7 @@ const InnerContainer = styled.div`
   }
 
   /* Large and up */
-  @media screen and (min-width: 64em) {
+  @media screen and (${breakpoints.large}) {
     width: 64em;
     padding: 0 10px;
     // background-color: green;
@@ -34,7 +35,6 @@ const InnerContainer = styled.div`
 `;
 
 const OuterContainer = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

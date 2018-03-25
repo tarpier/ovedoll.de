@@ -2,16 +2,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { styles } from '../utils';
+
 const Link = styled.a`
   text-decoration: none;
-  color: white;
-  border: 3px solid #48e5c2;
-  padding: 1em;
+  color: ${styles.colors.white};
+  border: 3px solid ${styles.colors.primary};
+  padding: 1rem;
   border-radius: 36px;
   
   &:hover{
     color: #5E5E5E;
-    background-color #48e5c2;
+    background-color ${styles.colors.primary};
     -webkit-transition: background-color 350ms ease-in;
     -ms-transition: background-color 350ms ease-in;
     transition: background-color 350ms ease-in;

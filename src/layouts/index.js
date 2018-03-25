@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { injectGlobal } from 'styled-components';
 
-import styles from '../components/utils';
+import { styles } from '../components/utils';
 // import "./index.css";
 
 /* eslint-disable no-unused-expressions */

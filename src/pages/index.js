@@ -6,7 +6,6 @@ import ContactForm from '../components/ContactForm';
 
 const IndexPage = ({ data }) => {
   const aboutContent = data.allMarkdownRemark.edges.filter(({ node }) => node.frontmatter.section === 'about');
-  const skills = data.allMarkdownRemark.edges.filter(({ node }) => node.frontmatter.section === 'skills');
 
   return (
     <div>
@@ -14,7 +13,6 @@ const IndexPage = ({ data }) => {
         // backgroundImage={data.headerImage}
         typeStrings={['Webseiten', 'Mobile Apps', 'Webapps', 'heißen Scheiß']}
       />
-
       <AboutMe data={aboutContent[0].node} />
       <ContactForm />
     </div>
