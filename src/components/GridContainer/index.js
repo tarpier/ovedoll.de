@@ -7,14 +7,14 @@ const InnerContainer = styled.div`
   @media screen and (max-width: 39.9375em) {
     width: 100%;
     padding: 0 10px;
-    background-color: red;
+    // background-color: red;
   }
 
   /* Medium and up */
   @media screen and (min-width: 40em) {
     width: 40em;
     padding: 0 10px;
-    background-color: blue;
+    // background-color: blue;
   }
 
   /* Medium only */
@@ -25,7 +25,7 @@ const InnerContainer = styled.div`
   @media screen and (min-width: 64em) {
     width: 64em;
     padding: 0 10px;
-    background-color: green;
+    // background-color: green;
   }
 
   /* Large only */
