@@ -1,12 +1,26 @@
 // @flow
 import React from 'react';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 
 import GridContainer from '../GridContainer';
+import { breakpoints } from '../utils';
 
-const AboutMe = ({ data }) => (
+type Props = {
+  data: {
+    html: string,
+  },
+};
+
+const AboutContainer = styled.div`
+  @media screen and (${breakpoints.medium}) {
+    width: 75%;
+    margin: 0 auto;
+  }
+`;
+
+const AboutMe = (props: Props) => (
   <GridContainer>
-    <div dangerouslySetInnerHTML={{ __html: data.html }} />
+    <AboutContainer dangerouslySetInnerHTML={{ __html: props.data.html }} />
   </GridContainer>
 );
 
