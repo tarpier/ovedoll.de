@@ -6,8 +6,8 @@ date: "2018-02-21"
 
 ## About Me
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet reiciendis pariatur doloribus mollitia officiis quod suscipit eius, sequi numquam eum odit voluptas impedit, officia accusamus voluptatum! Nemo, atque provident? Sequi numquam eum odit voluptas impedit, officia accusamus voluptatum! Nemo, atque provident?
+Hey I’m Ove, web and software developer specialized in frontend development, based in Hamburg, Germany.
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eveniet reiciendis pariatur doloribus mollitia officiis quod suscipit eius, sequi numquam eum odit voluptas impedit, officia accusamus voluptatum!
+I have been helping companies, brands and agencies building their digital products for quite some time now. This could mean building a website to attract new clients, running a fast and SEO friendly online shop or creating a mobile app, running both on android and ios.
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit.
+I would love to help you or your clients achieve the same. Just get in touch with a quick email or use the contact form below.

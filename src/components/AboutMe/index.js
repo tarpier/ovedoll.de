@@ -12,9 +12,15 @@ type Props = {
 };
 
 const AboutContainer = styled.div`
+  font-size: 1.1rem;
+
   @media screen and (${breakpoints.medium}) {
     width: 75%;
     margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 2rem;
   }
 `;
 
