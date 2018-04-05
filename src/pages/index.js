@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => {
         // backgroundImage={data.headerImage}
         typeStrings={['Webseiten', 'Mobile Apps', 'Webapps', 'heißen Scheiß']}
       />
-      <AboutMe data={aboutContent[0].node} />
+      <AboutMe data={aboutContent[0].node} profileImage={data.profileImage} />
       <ContactForm />
       <div style={{ height: '20px', backgroundColor: styles.colors.primary }} />
     </div>
@@ -27,8 +27,8 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexData {
-    headerImage: imageSharp(id: { regex: "/header/" }) {
-      sizes(maxWidth: 1240) {
+    profileImage: imageSharp(id: { regex: "/ovedoll/" }) {
+      sizes(maxWidth: 1024) {
         ...GatsbyImageSharpSizes
       }
     }

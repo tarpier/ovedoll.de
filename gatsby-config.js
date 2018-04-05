@@ -6,6 +6,9 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -13,8 +16,13 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'src',
+        path: `${__dirname}/src/`,
+      },
+    },
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
@@ -27,14 +35,6 @@ module.exports = {
         dir: '/src/svg',
         icon: true,
         viewBox: false,
-      },
-    },
-    'gatsby-transformer-remark',
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'src',
-        path: `${__dirname}/src/`,
       },
     },
   ],

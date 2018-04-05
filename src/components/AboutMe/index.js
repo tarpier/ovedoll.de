@@ -1,9 +1,10 @@
 // @flow
 import React from 'react';
 import styled from 'styled-components';
+import Img from 'gatsby-image';
 
 import GridContainer from '../GridContainer';
-import { breakpoints } from '../utils';
+import { breakpoints, styles } from '../utils';
 
 type Props = {
   data: {
@@ -13,6 +14,10 @@ type Props = {
 
 const AboutContainer = styled.div`
   font-size: 1.1rem;
+  display: flex;
+  flex-direction: row;
+  background-color: ${styles.colors.backgroundDark}
+  color: ${styles.colors.white}
 
   @media screen and (${breakpoints.medium}) {
     width: 75%;
@@ -22,11 +27,33 @@ const AboutContainer = styled.div`
   h2 {
     font-size: 2rem;
   }
+
+  .gatsby-image-outer-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
+
+const Image = styled(Img)`
+  width: 16rem;
+  border-radius: 100%;
+`;
+const Content = styled.div`
+  flex: 2;
+  padding-right: 2.5rem;
+`;
+
+/* display: flex;
+  justify-content: center;
+  align-items: center; */
 
 const AboutMe = (props: Props) => (
   <GridContainer>
-    <AboutContainer dangerouslySetInnerHTML={{ __html: props.data.html }} />
+    <AboutContainer>
+      <Content dangerouslySetInnerHTML={{ __html: props.data.html }} />
+      <Image alt="profile picture" sizes={props.profileImage.sizes} />
+    </AboutContainer>
   </GridContainer>
 );
 

@@ -46,7 +46,7 @@ type Props = {
   typeStrings: Array<string>,
 };
 
-export default function ({ typeStrings, backgroundImage }: Props) {
+export default function ({ typeStrings }: Props) {
   // TODO Use Gatsby Image to include backgroundImage
   // console.log(backgroundImage);
 
