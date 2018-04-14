@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Img from 'gatsby-image';
 
 import GridContainer from '../GridContainer';
-import { breakpoints, styles } from '../utils';
+import { breakpoints } from '../utils';
 
 type Props = {
   data: {
@@ -16,8 +16,6 @@ const AboutContainer = styled.div`
   font-size: 1.1rem;
   display: flex;
   flex-direction: row;
-  background-color: ${styles.colors.backgroundDark}
-  color: ${styles.colors.white}
 
   @media screen and (${breakpoints.medium}) {
     width: 75%;

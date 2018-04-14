@@ -27,8 +27,8 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexData {
-    profileImage: imageSharp(id: { regex: "/ovedoll/" }) {
-      sizes(maxWidth: 1024) {
+    profileImage: imageSharp(id: { regex: "/ovedoll.jpg/" }) {
+      sizes(maxWidth: 256) {
         ...GatsbyImageSharpSizes
       }
     }
