@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Typed from 'react-typed';
+import { Grid, Cell } from 'styled-css-grid';
 
 import background from './heroBackground.jpg';
 import Button from '../Button';
@@ -38,9 +39,7 @@ const AnimatedClaim = styled.span`
   display: block;
 `;
 
-const StyledButton = styled(Button)`
-  margin-top: 10rem;
-`;
+const StyledButton = styled(Button)``;
 
 type Props = {
   typeStrings: Array<string>,
@@ -53,27 +52,33 @@ export default function ({ typeStrings }: Props) {
   return (
     <HeroWrapper>
       <ImageContainer>
-        <ClaimContainer>
-          Hi, ich bin Ove. Ich baue
-          <AnimatedClaim>
-            <Typed
-              strings={typeStrings}
-              typeSpeed={60}
-              startDelay={30}
-              loop
-              loopCount={Infinity}
-              backDelay={450}
-              backSpeed={60}
+        <Grid columns={1}>
+          <Cell left={1} top={1}>
+            <ClaimContainer>
+              Hi, my name is Ove and I build
+              <AnimatedClaim>
+                <Typed
+                  strings={typeStrings}
+                  typeSpeed={60}
+                  startDelay={30}
+                  loop
+                  loopCount={Infinity}
+                  backDelay={450}
+                  backSpeed={60}
+                />
+              </AnimatedClaim>
+            </ClaimContainer>
+          </Cell>
+          <Cell left={1} top={2} middle center>
+            <StyledButton
+              href="#"
+              title="let's build something together"
+              onClick={() => {
+                console.log('clicked');
+              }}
             />
-          </AnimatedClaim>
-        </ClaimContainer>
-        <StyledButton
-          href="#"
-          title="Lass uns zusammen arbeiten"
-          onClick={() => {
-            console.log('clicked');
-          }}
-        />
+          </Cell>
+        </Grid>
       </ImageContainer>
     </HeroWrapper>
   );

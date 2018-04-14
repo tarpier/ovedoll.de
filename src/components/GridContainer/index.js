@@ -6,8 +6,8 @@ import { breakpoints } from '../utils';
 const InnerContainer = styled.div`
   /* Small only */
   @media screen and (${breakpoints.small}) {
-    width: 100%;
-    padding: 0 10px;
+    // width: 100%;
+    padding: 0 10px 0 10px;
     // background-color: red;
   }
 

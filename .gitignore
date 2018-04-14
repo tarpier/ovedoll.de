@@ -1,6 +1,9 @@
 .cache
 node_modules
 
+# Gatsby generated files
+public/static/*.jpg
+
 
 # OS generated files #
 ######################
