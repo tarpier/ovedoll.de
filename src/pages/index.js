@@ -17,7 +17,7 @@ const IndexPage = ({ data }) => {
         typeStrings={['websites', 'mobile apps', 'webapps', 'hot sh*t']}
       />
       <AboutMe data={aboutContent[0].node} profileImage={data.profileImage} />
-      {/* <ContactForm /> */}
+      <ContactForm />
       {/* <div style={{ height: '20px', backgroundColor: styles.colors.primary }} /> */}
     </div>
   );

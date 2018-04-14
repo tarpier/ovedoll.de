@@ -6,6 +6,7 @@ export const styles = {
     backgroundLight: '#fcfaf9',
     backgroundDark: '#5e5e5e',
     fontColor: '#333333',
+    fontColorLight: '#ffffff',
     inactive: '#c0c0c0',
     white: '#ffffff',
   },

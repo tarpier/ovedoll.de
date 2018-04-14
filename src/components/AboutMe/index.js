@@ -23,8 +23,6 @@ const Image = styled(Img)`
 `;
 
 const Wrapper = styled(GridContainer)`
-  background-color: #28282d;
-  color: rgba(255, 255, 255, 0.8);
   padding: 1.5rem 0;
 
   .gatsby-image-wrapper {

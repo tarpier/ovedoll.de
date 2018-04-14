@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Typed from 'react-typed';
 import { Grid, Cell } from 'styled-css-grid';
 
+import { breakpoints } from '../utils';
 import background from './heroBackground.jpg';
 import Button from '../Button';
 
@@ -33,6 +34,16 @@ const ClaimContainer = styled.p`
   font-weight: 400;
   line-height: 1.2;
   text-align: left;
+
+  @media screen and (${breakpoints.medium}) {
+    font-size: 2.5em;
+    text-align: left;
+  }
+
+  @media screen and (${breakpoints.small}) {
+    font-size: 2.2em;
+    text-align: center;
+  }
 `;
 
 const AnimatedClaim = styled.span`
