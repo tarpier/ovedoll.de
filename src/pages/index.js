@@ -14,11 +14,11 @@ const IndexPage = ({ data }) => {
       <div style={{ height: '4px', backgroundColor: styles.colors.primary }} />
       <Hero
         // backgroundImage={data.headerImage}
-        typeStrings={['Webseiten', 'Mobile Apps', 'Webapps', 'heißen Scheiß']}
+        typeStrings={['websites', 'mobile apps', 'webapps', 'hot sh*t']}
       />
       <AboutMe data={aboutContent[0].node} profileImage={data.profileImage} />
       <ContactForm />
-      <div style={{ height: '20px', backgroundColor: styles.colors.primary }} />
+      {/* <div style={{ height: '20px', backgroundColor: styles.colors.primary }} /> */}
     </div>
   );
 };

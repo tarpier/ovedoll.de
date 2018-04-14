@@ -6,8 +6,8 @@ import { breakpoints } from '../utils';
 const InnerContainer = styled.div`
   /* Small only */
   @media screen and (${breakpoints.small}) {
-    width: 100%;
-    padding: 0 10px;
+    // width: 100%;
+    padding: 0 10px 0 10px;
     // background-color: red;
   }
 
@@ -38,7 +38,6 @@ const OuterContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 2.5rem;
 `;
 
 const GridContainer = props => (
