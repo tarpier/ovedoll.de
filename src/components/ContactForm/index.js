@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import styled from 'styled-components';
-import { Grid, Cell } from 'styled-css-grid';
+import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 
 import { styles, breakpoints } from '../utils';
 import GridContainer from '../GridContainer';
@@ -39,9 +39,11 @@ const Textarea = styled.textarea`
   color: ${styles.colors.fontColorLight};
   border-bottom: 1px solid ${styles.colors.inactive};
   transition: border-color 0.3s;
+  font-family: inherit;
 
   &::placeholder {
     color: ${styles.colors.inactive};
+    font-family: inherit;
   }
 
   &:focus {
@@ -75,23 +77,38 @@ const Container = styled(GridContainer)`
   color: rgba(255, 255, 255, 0.8);
 `;
 
+const Honeypot = styled.label`
+  display: none;
+  visibility: hidden;
+`;
+
 const ContactForm = () => (
   <Container>
-    <Grid columns={1}>
+    <Grid>
       <Form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
-        <Cell>
-          <Input type="text" name="name" placeholder="Your name" />
-        </Cell>
-        <Cell>
-          <Input type="text" name="email" placeholder="name@emailadress.com" />
-        </Cell>
-        <Cell>
-          <Textarea name="message" rows="4" type="plaintext" placeholder="Your message" />
-        </Cell>
-
-        <Cell>
-          <Button type="submit" value="Absenden" />
-        </Cell>
+        <Honeypot>
+          Don’t fill this out if you're human: <input name="bot-field" />
+        </Honeypot>
+        <Row>
+          <Col xs={12}>
+            <Input type="text" name="name" placeholder="Ihr Name" />
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12}>
+            <Input type="text" name="email" placeholder="meine@emailAdresse.de" />
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12}>
+            <Textarea name="message" rows="4" type="plaintext" placeholder="Ihre Nachricht" />
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12}>
+            <Button type="submit" value="Absenden" />
+          </Col>
+        </Row>
       </Form>
     </Grid>
   </Container>
