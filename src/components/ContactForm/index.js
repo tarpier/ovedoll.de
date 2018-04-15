@@ -75,19 +75,20 @@ const Container = styled(GridContainer)`
   color: rgba(255, 255, 255, 0.8);
 `;
 
+const Honeypot = styled.label`
+  display: none;
+`;
+
 const ContactForm = () => (
   <Container>
     <Grid columns={1}>
       <Form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
-        <Cell>
-          <Input type="text" name="name" placeholder="Your name" />
-        </Cell>
-        <Cell>
-          <Input type="text" name="email" placeholder="name@emailadress.com" />
-        </Cell>
-        <Cell>
-          <Textarea name="message" rows="4" type="plaintext" placeholder="Your message" />
-        </Cell>
+        <Honeypot>
+          Don’t fill this out if you're human: <input name="bot-field" />
+        </Honeypot>
+        <Input type="text" name="name" placeholder="Ihr Name" />
+        <Input type="text" name="email" placeholder="meine@emailAdresse.de" />
+        <Textarea name="message" rows="4" type="plaintext" placeholder="Ihre Nachricht" />
 
         <Cell>
           <Button type="submit" value="Absenden" />
