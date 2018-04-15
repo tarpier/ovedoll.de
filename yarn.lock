@@ -6854,6 +6854,10 @@ lodash.isequal@^4.0.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
 
+lodash.isinteger@^4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/lodash.isinteger/-/lodash.isinteger-4.0.4.tgz#619c0af3d03f8b04c31f5882840b77b11cd68343"
+
 lodash.isplainobject@^4.0.6:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
@@ -9154,6 +9158,12 @@ react-side-effect@^1.1.0:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
 
+react-styled-flexboxgrid@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-styled-flexboxgrid/-/react-styled-flexboxgrid-2.2.0.tgz#2b1ea9dba28da8c493c0f576b4d5b2dc8a07a30f"
+  dependencies:
+    lodash.isinteger "^4.0.4"
+
 react-typed@^1.0.8:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/react-typed/-/react-typed-1.0.8.tgz#a976a9237968eca8521630b72b121beb7599459e"
@@ -10748,12 +10758,6 @@ styled-components@^3.1.6:
     stylis "^3.4.0"
     stylis-rule-sheet "^0.0.7"
     supports-color "^3.2.3"
-
-styled-css-grid@^0.8.2:
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/styled-css-grid/-/styled-css-grid-0.8.2.tgz#3b9f850a431b65443bd1c85525322fec729adaea"
-  dependencies:
-    prop-types "^15.6.0"
 
 stylis-rule-sheet@^0.0.7:
   version "0.0.7"

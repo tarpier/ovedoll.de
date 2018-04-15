@@ -13,12 +13,12 @@ const IndexPage = ({ data }) => {
     <div>
       <div style={{ height: '4px', backgroundColor: styles.colors.primary }} />
       <Hero
-        // backgroundImage={data.headerImage}
+        heroImage={data.heroImage}
         typeStrings={['websites', 'mobile apps', 'webapps', 'hot sh*t']}
       />
       <AboutMe data={aboutContent[0].node} profileImage={data.profileImage} />
       <ContactForm />
-      {/* <div style={{ height: '20px', backgroundColor: styles.colors.primary }} /> */}
+      <div style={{ height: '20px', backgroundColor: styles.colors.primary }} />
     </div>
   );
 };
@@ -29,6 +29,11 @@ export const pageQuery = graphql`
   query IndexData {
     profileImage: imageSharp(id: { regex: "/ovedoll.jpg/" }) {
       sizes(maxWidth: 256) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    heroImage: imageSharp(id: { regex: "/header.jpg/" }) {
+      sizes(maxWidth: 1240) {
         ...GatsbyImageSharpSizes
       }
     }

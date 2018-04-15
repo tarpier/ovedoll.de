@@ -2,69 +2,61 @@
 import React from 'react';
 import styled from 'styled-components';
 import Typed from 'react-typed';
-import { Grid, Cell } from 'styled-css-grid';
+import { Grid, Col, Row } from 'react-styled-flexboxgrid';
+import Img from 'gatsby-image';
 
 import { breakpoints } from '../utils';
-import background from './heroBackground.jpg';
+import GridContainer from '../GridContainer';
+
 import Button from '../Button';
 
-const HeroWrapper = styled.div``;
-
-const ImageContainer = styled.div`
-  background: url(${background}) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 100vh;
+const HeroContainer = styled.div`
+  overflow: hidden;
   position: relative;
-  /* text-align: center; */
-  width: 100%;
-  min-height: 350px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-const ClaimContainer = styled.p`
-  font-size: 3.3rem;
-  color: white;
-  font-family: rubik;
-  font-weight: 400;
-  line-height: 1.2;
-  text-align: left;
-
-  @media screen and (${breakpoints.medium}) {
-    font-size: 2.5em;
-    text-align: left;
-  }
-
-  @media screen and (${breakpoints.small}) {
-    font-size: 2.2em;
-    text-align: center;
-  }
+  height: 100vh;
 `;
 
 const AnimatedClaim = styled.span`
   display: block;
 `;
+const ClaimContainer = styled.p`
+  font-size: 2.2em;
+  text-align: center;
+  color: white;
+  font-family: rubik;
+  font-weight: 400;
+  line-height: 1.2;
 
-const StyledButton = styled(Button)``;
+  @media screen and (${breakpoints.medium}) {
+    font-size: 2.5em;
+    text-align: left;
+  }
+  @media screen and (${breakpoints.large}) {
+    font-size: 2.8rem;
+    text-align: left;
+  }
+`;
+
+const StyledButton = styled(Button)`
+  width: 100%;
+  font-size: 1em;
+
+  @media screen and (${breakpoints.medium}) {
+    font-size: 1.2em;
+  }
+`;
 
 type Props = {
   typeStrings: Array<string>,
+  heroImage: Object,
 };
 
-export default function ({ typeStrings }: Props) {
-  // TODO Use Gatsby Image to include backgroundImage
-  // console.log(backgroundImage);
-
-  return (
-    <HeroWrapper>
-      <ImageContainer>
-        <Grid columns={1}>
-          <Cell left={1} top={1}>
+const Hero = ({ typeStrings, heroImage }: Props) => (
+  <HeroContainer>
+    <GridContainer>
+      <Grid>
+        <Row style={{ paddingTop: '30vh', marginBottom: '2rem' }}>
+          <Col xs={12} md={8} mdOffset={2} style={{ zIndex: 1 }}>
             <ClaimContainer>
               Hi, my name is Ove and I build
               <AnimatedClaim>
@@ -79,8 +71,10 @@ export default function ({ typeStrings }: Props) {
                 />
               </AnimatedClaim>
             </ClaimContainer>
-          </Cell>
-          <Cell left={1} top={2} middle center>
+          </Col>
+        </Row>
+        <Row center="xs">
+          <Col xs={12} style={{ zIndex: 1 }} center="xs">
             <StyledButton
               href="#"
               title="let's build something together"
@@ -88,9 +82,21 @@ export default function ({ typeStrings }: Props) {
                 console.log('clicked');
               }}
             />
-          </Cell>
-        </Grid>
-      </ImageContainer>
-    </HeroWrapper>
-  );
-}
+          </Col>
+        </Row>
+      </Grid>
+    </GridContainer>
+    <Img
+      alt=""
+      sizes={heroImage.sizes}
+      style={{
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        width: '100%',
+        height: '100%',
+      }}
+    />
+  </HeroContainer>
+);
+export default Hero;

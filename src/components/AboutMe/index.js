@@ -2,7 +2,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-import { Grid, Cell } from 'styled-css-grid';
+import { Grid, Col, Row } from 'react-styled-flexboxgrid';
+
 import GridContainer from '../GridContainer';
 
 import { breakpoints } from '../utils';
@@ -16,38 +17,25 @@ type Props = {
 const Image = styled(Img)`
   width: 16rem;
   border-radius: 100%;
-
-  .gatsby-image-wrapper {
-    margin: 0 auto;
-  }
+  margin: 0 auto;
 `;
-
-const Wrapper = styled(GridContainer)`
-  padding: 1.5rem 0;
-
-  .gatsby-image-wrapper {
-    margin: 0 auto;
-  }
+const StyledGridContainer = styled(GridContainer)`
+  padding: 3.5rem 0;
 `;
-
-/* display: flex;
-  justify-content: center;
-  align-items: center; */
 
 const AboutMe = (props: Props) => (
-  <Wrapper>
-    <Grid
-      columns={2}
-      rows="repeat(auto-fill, minmax(250px, 1fr))"
-      gap="8px"
-      justifyContent="space-between"
-    >
-      <Cell dangerouslySetInnerHTML={{ __html: props.data.html }} />
-      <Cell middle center>
-        <Image alt="profile picture" sizes={props.profileImage.sizes} />
-      </Cell>
+  <StyledGridContainer>
+    <Grid>
+      <Row>
+        <Col xs={12} sm={6} lg={3}>
+          <Image alt="profile picture" sizes={props.profileImage.sizes} />
+        </Col>
+        <Col xs={12} sm={6} lg={9}>
+          <div dangerouslySetInnerHTML={{ __html: props.data.html }} />
+        </Col>
+      </Row>
     </Grid>
-  </Wrapper>
+  </StyledGridContainer>
 );
 
 export default AboutMe;
