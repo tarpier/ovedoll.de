@@ -73,7 +73,7 @@ const Hero = ({ typeStrings, heroImage }: Props) => (
             </ClaimContainer>
           </Col>
         </Row>
-        <Row center="xs">
+        {/* <Row center="xs">
           <Col xs={12} style={{ zIndex: 1 }} center="xs">
             <StyledButton
               href="#"
@@ -83,7 +83,7 @@ const Hero = ({ typeStrings, heroImage }: Props) => (
               }}
             />
           </Col>
-        </Row>
+        </Row> */}
       </Grid>
     </GridContainer>
     <Img

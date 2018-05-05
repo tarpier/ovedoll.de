@@ -85,28 +85,28 @@ const Honeypot = styled.label`
 const ContactForm = () => (
   <Container>
     <Grid>
-      <Form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+      <Form name="contact" method="post" netlify netlify-honeypot="bot-field">
         <Honeypot>
           Don’t fill this out if you're human: <input name="bot-field" />
         </Honeypot>
         <Row>
           <Col xs={12}>
-            <Input type="text" name="name" placeholder="Ihr Name" />
+            <Input type="text" name="name" placeholder="your name" />
           </Col>
         </Row>
         <Row>
           <Col xs={12}>
-            <Input type="text" name="email" placeholder="meine@emailAdresse.de" />
+            <Input type="text" name="email" placeholder="you@adress.com" />
           </Col>
         </Row>
         <Row>
           <Col xs={12}>
-            <Textarea name="message" rows="4" type="plaintext" placeholder="Ihre Nachricht" />
+            <Textarea name="message" rows="4" type="plaintext" placeholder="your message" />
           </Col>
         </Row>
         <Row>
           <Col xs={12}>
-            <Button type="submit" value="Absenden" />
+            <Button type="submit" value="send" />
           </Col>
         </Row>
       </Form>
