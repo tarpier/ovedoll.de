@@ -8,11 +8,7 @@ import GridContainer from '../GridContainer';
 
 import { breakpoints } from '../utils';
 
-type Props = {
-  data: {
-    html: string,
-  },
-};
+type Props = {};
 
 const Image = styled(Img)`
   width: 16rem;
@@ -23,15 +19,15 @@ const StyledGridContainer = styled(GridContainer)`
   padding: 3.5rem 0;
 `;
 
-const AboutMe = (props: Props) => (
+const AboutMe = ({ aboutContent, profileImage } = props) => (
   <StyledGridContainer>
     <Grid>
       <Row>
         <Col xs={12} sm={6} lg={3}>
-          <Image alt="profile picture" sizes={props.profileImage.sizes} />
+          <Image alt="profile picture" sizes={profileImage.sizes} />
         </Col>
         <Col xs={12} sm={6} lg={9}>
-          <div dangerouslySetInnerHTML={{ __html: props.data.html }} />
+          <div dangerouslySetInnerHTML={{ __html: aboutContent }} />
         </Col>
       </Row>
     </Grid>
