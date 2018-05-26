@@ -6,14 +6,14 @@ import AboutMe from '../components/AboutMe';
 import ContactForm from '../components/ContactForm';
 import { styles } from '../components/utils';
 
-const IndexPage = ({ data }) => (
+const IndexPage = props => (
   <div>
     <div style={{ height: '4px', backgroundColor: styles.colors.primary }} />
     <Hero
-      heroImage={data.heroImage}
+      heroImage={props.data.heroImage}
       typeStrings={['websites', 'mobile apps', 'webapps', 'hot sh*t']}
     />
-    <AboutMe aboutContent={data.aboutContent.html} profileImage={data.profileImage} />
+    <AboutMe aboutContent={props.data.aboutContent.html} profileImage={props.data.profileImage} />
     <ContactForm />
     <div style={{ height: '20px', backgroundColor: styles.colors.primary }} />
   </div>
@@ -28,7 +28,7 @@ export const pageQuery = graphql`
         ...GatsbyImageSharpSizes
       }
     }
-    heroImage: imageSharp(id: { regex: "/header.jpg/" }) {
+    heroImage: imageSharp(id: { regex: "/heroBackground.jpg/" }) {
       sizes(maxWidth: 1240) {
         ...GatsbyImageSharpSizes
       }
