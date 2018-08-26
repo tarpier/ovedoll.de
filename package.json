@@ -12,23 +12,24 @@
     "gatsby-plugin-sharp": "^1.6.41",
     "gatsby-plugin-styled-components": "^2.0.9",
     "gatsby-plugin-svgr": "^0.2.1",
+    "gatsby-plugin-typescript": "^1.4.20",
     "gatsby-source-filesystem": "^1.5.27",
     "gatsby-transformer-remark": "^1.7.37",
     "gatsby-transformer-sharp": "^1.6.22",
     "react-helmet": "^5.2.0",
     "react-styled-flexboxgrid": "^2.2.0",
     "react-typed": "^1.0.8",
-    "styled-components": "^3.1.6"
+    "styled-components": "^3.1.6",
+    "typescript": "^2.9.2"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "flow": "flow",
+    "tsc": "node ./node_modules/typescript/lib/tsc.js --pretty --noEmit",
+    "tsc-watch": "yarn tsc --watch",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
